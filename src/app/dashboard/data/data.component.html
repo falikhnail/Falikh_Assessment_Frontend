@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Data Packages</h2>
+    
+    <!-- Tombol Download PDF -->
+    <button (click)="downloadPdf()" class="btn btn-primary mb-3">Download PDF</button>
+    
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Package Name</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Looping data menggunakan *ngFor -->
+        <tr *ngFor="let item of data; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.package_name }}</td>
+          <td>{{ item.package_price }}</td>
+          <td>
+            <!-- Tombol Delete -->
+            <button (click)="delete(item.id)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
